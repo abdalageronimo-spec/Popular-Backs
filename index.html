@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Popular Backs - Tienda de Ropa Colombiana</title>
+    <meta name="description" content="Popular Backs - Compania Colombiana de ropa de alta calidad, hecha a mano por expertos. Zapatos, pantalones, camisas, camisetas, bermudas y ropa interior.">
+    <meta name="keywords" content="ropa, moda, Colombia, zapatos, pantalones, camisas, camisetas, bermudas, ropa interior, artesanal">
+    <meta name="author" content="Popular Backs">
+    <meta name="robots" content="index, follow">
+
+    <!-- Android / Mobile Optimizations -->
+    <meta name="theme-color" content="#1a472a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <style>
+        :root {
+            --dark-green: #1a472a;
+            --medium-green: #2d6a4f;
+            --light-green: #52b788;
+            --pale-green: #d8f3dc;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --text-dark: #1b4332;
+            --text-light: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--medium-green) 100%);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(26, 71, 42, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--light-green);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-menu a:hover, .nav-menu a:active {
+            color: var(--light-green);
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.3rem;
+            padding: 8px;
+            user-select: none;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--light-green);
+            color: var(--dark-green);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 60px;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(26,71,42,0.85) 0%, rgba(45,106,79,0.85) 50%, rgba(82,183,136,0.85) 100%), url('images/hero_bg.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 28px;
+            opacity: 0.95;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--white);
+            color: var(--dark-green);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--white);
+            cursor: pointer;
+            min-height: 48px;
+            min-width: 160px;
+            text-align: center;
+        }
+
+        .btn-primary:hover, .btn-primary:active {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Categories */
+        .categories {
+            padding: 60px 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .gender-section {
+            margin-bottom: 50px;
+        }
+
+        .gender-title {
+            font-size: 1.5rem;
+            color: var(--medium-green);
+            margin-bottom: 24px;
+            padding-left: 16px;
+            border-left: 4px solid var(--light-green);
+        }
+
+        .subcategories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(26, 71, 42, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--pale-green);
+            -webkit-transform: translateZ(0);
+        }
+
+        .category-card:hover, .category-card:active {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(26, 71, 42, 0.12);
+        }
+
+        .category-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover .category-image img {
+            transform: scale(1.08);
+        }
+
+        .category-info {
+            padding: 20px;
+        }
+
+        .category-info h3 {
+            font-size: 1.2rem;
+            color: var(--dark-green);
+            margin-bottom: 8px;
+        }
+
+        .category-info p {
+            color: var(--text-light);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .category-info .price-from {
+            color: var(--medium-green);
+            font-weight: 700;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        /* About */
+        .about {
+            position: relative;
+            color: var(--white);
+            padding: 80px 16px;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(26,71,42,0.92) 0%, rgba(45,106,79,0.92) 100%), url('images/about_bg.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-container {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            padding: 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .feature h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        /* Cart Section */
+        .cart-section {
+            padding: 60px 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+        }
+
+        .cart-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .cart-items {
+            background: var(--off-white);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .cart-item-image {
+            width: 64px;
+            height: 64px;
+            border-radius: 10px;
+            margin-right: 16px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cart-item-details h4 {
+            color: var(--dark-green);
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+
+        .cart-item-details p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .cart-item-price {
+            font-weight: 700;
+            color: var(--medium-green);
+            font-size: 1.1rem;
+            white-space: nowrap;
+            margin-left: 12px;
+        }
+
+        .payment-summary {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--medium-green) 100%);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            position: sticky;
+            top: 76px;
+        }
+
+        .payment-summary h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            font-size: 0.95rem;
+        }
+
+        .summary-total {
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: none;
+            padding-top: 8px;
+        }
+
+        .payment-methods {
+            margin-top: 20px;
+        }
+
+        .payment-methods h4 {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .payment-options {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .payment-option {
+            background: rgba(255,255,255,0.15);
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            user-select: none;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .payment-option:hover, .payment-option.active {
+            background: var(--white);
+            color: var(--dark-green);
+            border-color: var(--light-green);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--light-green);
+            color: var(--dark-green);
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            min-height: 52px;
+        }
+
+        .checkout-btn:hover, .checkout-btn:active {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .secure-badge {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-green);
+            color: var(--white);
+            padding: 50px 16px 24px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: var(--light-green);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover, .footer-section a:active {
+            color: var(--light-green);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            justify-content: flex-end;
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+        }
+
+        .cart-modal.active {
+            display: flex;
+        }
+
+        .cart-sidebar {
+            background: var(--white);
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            padding: 24px;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .cart-modal.active .cart-sidebar {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .cart-header h2 {
+            color: var(--dark-green);
+            font-size: 1.4rem;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark-green);
+            color: var(--white);
+            padding: 16px 20px;
+            z-index: 3000;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-banner p {
+            font-size: 0.9rem;
+            margin: 0;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .cookie-banner a {
+            color: var(--light-green);
+            text-decoration: underline;
+        }
+
+        .cookie-btn {
+            background: var(--light-green);
+            color: var(--dark-green);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-height: 40px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--pale-green);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--medium-green);
+            border-radius: 3px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 60px;
+                flex-direction: column;
+                background: var(--dark-green);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 20px 0;
+                gap: 0;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                padding: 12px 0;
+                width: 100%;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 12px;
+                font-size: 1.1rem;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 400px;
+                padding: 30px 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .gender-title {
+                font-size: 1.2rem;
+            }
+
+            .subcategories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-container {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-summary {
+                position: static;
+            }
+
+            .about-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cart-sidebar {
+                max-width: 100%;
+            }
+
+            .cookie-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 16px;
+            }
+
+            .cookie-banner p {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-options {
+                justify-content: center;
+            }
+
+            .cart-item {
+                flex-wrap: wrap;
+            }
+
+            .cart-item-price {
+                width: 100%;
+                text-align: right;
+                margin-top: 8px;
+                margin-left: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Popular <span>Backs</span></a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#mujeres">Mujeres</a></li>
+                <li><a href="#hombres">Hombres</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#carrito">Carrito</a></li>
+                <li>
+                    <div class="cart-icon" onclick="toggleCart()" role="button" aria-label="Abrir carrito">
+                        <span style="font-size:1.4rem;">&#128722;</span>
+                        <span class="cart-count" id="cartCount">3</span>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">&#9776;</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content animate-fade-in">
+            <h1>Estilo y Calidad<br>Hecho en Colombia</h1>
+            <p>Descubre nuestra coleccion de ropa artesanal 100% hecha a mano por expertos colombianos</p>
+            <a href="#mujeres" class="btn-primary">Explorar Coleccion</a>
+        </div>
+    </section>
+
+    <!-- Women Categories -->
+    <section class="categories" id="mujeres">
+        <h2 class="section-title">Coleccion para Mujeres</h2>
+        <div class="gender-section">
+            <h3 class="gender-title">&#128105; Mujeres</h3>
+            <div class="subcategories-grid">
+                <div class="category-card" onclick="addToCart('Zapatos Mujer', 189900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/zapatos_mujer.png" alt="Zapatos artesanales para mujer" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Zapatos</h3>
+                        <p>Zapatos artesanales de cuero con disenos exclusivos y acabados de lujo.</p>
+                        <div class="price-from">Desde $189.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Pantalones Mujer', 149900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/pantalones_mujer.png" alt="Pantalones para mujer" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Pantalones</h3>
+                        <p>Pantalones confeccionados con telas premium y ajuste perfecto.</p>
+                        <div class="price-from">Desde $149.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Ropa Interior Mujer', 69900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/ropa_interior_mujer.png" alt="Ropa interior para mujer" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Ropa Interior</h3>
+                        <p>Lenceria y ropa interior con telas suaves y disenos elegantes.</p>
+                        <div class="price-from">Desde $69.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Bermudas Mujer', 119900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/bermudas_mujer.png" alt="Bermudas para mujer" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Bermudas</h3>
+                        <p>Bermudas versatiles para cualquier ocasion, confeccionadas a mano.</p>
+                        <div class="price-from">Desde $119.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Camisas Mujer', 159900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/camisas_mujer.png" alt="Camisas para mujer" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Camisas</h3>
+                        <p>Camisas elegantes con detalles bordados a mano por artesanos.</p>
+                        <div class="price-from">Desde $159.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Camisetas Mujer', 89900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/camisetas_mujer.png" alt="Camisetas para mujer" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Camisetas</h3>
+                        <p>Camisetas de algodon organico con disenos unicos y confortables.</p>
+                        <div class="price-from">Desde $89.900 COP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Men Categories -->
+    <section class="categories" id="hombres">
+        <h2 class="section-title">Coleccion para Hombres</h2>
+        <div class="gender-section">
+            <h3 class="gender-title">&#128104; Hombres</h3>
+            <div class="subcategories-grid">
+                <div class="category-card" onclick="addToCart('Zapatos Hombre', 219900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/zapatos_hombre.png" alt="Zapatos artesanales para hombre" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Zapatos</h3>
+                        <p>Zapatos formales y casuales de cuero genuino con acabado artesanal.</p>
+                        <div class="price-from">Desde $219.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Pantalones Hombre', 169900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/pantalones_hombre.png" alt="Pantalones para hombre" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Pantalones</h3>
+                        <p>Jeans y pantalones de vestir con la mejor calidad de confeccion.</p>
+                        <div class="price-from">Desde $169.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Ropa Interior Hombre', 59900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/ropa_interior_hombre.png" alt="Ropa interior para hombre" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Ropa Interior</h3>
+                        <p>Ropa interior comoda y duradera con telas transpirables.</p>
+                        <div class="price-from">Desde $59.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Bermudas Hombre', 129900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/bermudas_hombre.png" alt="Bermudas para hombre" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Bermudas</h3>
+                        <p>Bermudas deportivas y casuales para el clima colombiano.</p>
+                        <div class="price-from">Desde $129.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Camisas Hombre', 179900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/camisas_hombre.png" alt="Camisas para hombre" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Camisas</h3>
+                        <p>Camisas de vestir y casuales con disenos exclusivos colombianos.</p>
+                        <div class="price-from">Desde $179.900 COP</div>
+                    </div>
+                </div>
+                <div class="category-card" onclick="addToCart('Camisetas Hombre', 99900)" role="button" tabindex="0">
+                    <div class="category-image"><img src="images/camisetas_hombre.png" alt="Camisetas para hombre" loading="lazy"></div>
+                    <div class="category-info">
+                        <h3>Camisetas</h3>
+                        <p>Camisetas de alta calidad con estampados locales y disenos unicos.</p>
+                        <div class="price-from">Desde $99.900 COP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="about-container">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una compania Colombiana comprometida con la venta de articulos textiles hechos en la mejor calidad y a la mano de profesionales expertos en manufactura y tejidos 100% a mano.</p>
+            <div class="about-features">
+                <div class="feature">
+                    <div class="feature-icon">&#127464;&#127476;</div>
+                    <h4>100% Colombiano</h4>
+                    <p>Todos nuestros productos son disenados y fabricados en Colombia</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#129330;</div>
+                    <h4>Hecho a Mano</h4>
+                    <p>Cada pieza es elaborada artesanalmente por expertos tejedores</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#10024;</div>
+                    <h4>Calidad Premium</h4>
+                    <p>Utilizamos solo las mejores telas y materiales disponibles</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#127807;</div>
+                    <h4>Sostenible</h4>
+                    <p>Comprometidos con practicas de manufactura eco-amigables</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart & Payment Section -->
+    <section class="cart-section" id="carrito">
+        <h2 class="section-title">Tu Carrito de Compras</h2>
+        <div class="cart-container">
+            <div class="cart-items" id="cartItems">
+                <div class="cart-item" data-id="1">
+                    <div class="cart-item-image"><img src="images/zapatos_hombre.png" alt="Zapatos"></div>
+                    <div class="cart-item-details">
+                        <h4>Zapatos Hombre</h4>
+                        <p>Cuero genuino - Talla 42</p>
+                    </div>
+                    <div class="cart-item-price">$219.900</div>
+                </div>
+                <div class="cart-item" data-id="2">
+                    <div class="cart-item-image"><img src="images/pantalones_mujer.png" alt="Pantalones"></div>
+                    <div class="cart-item-details">
+                        <h4>Pantalones Mujer</h4>
+                        <p>Tela premium - Talla M</p>
+                    </div>
+                    <div class="cart-item-price">$149.900</div>
+                </div>
+                <div class="cart-item" data-id="3">
+                    <div class="cart-item-image"><img src="images/camisetas_hombre.png" alt="Camisetas"></div>
+                    <div class="cart-item-details">
+                        <h4>Camisetas Hombre</h4>
+                        <p>Algodon organico - Talla L</p>
+                    </div>
+                    <div class="cart-item-price">$99.900</div>
+                </div>
+            </div>
+
+            <div class="payment-summary">
+                <h3>Resumen de Compra</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$469.700</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envio</span>
+                    <span>$15.000</span>
+                </div>
+                <div class="summary-row">
+                    <span>Impuestos (19%)</span>
+                    <span id="tax">$89.243</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total</span>
+                    <span id="total">$573.943</span>
+                </div>
+
+                <div class="payment-methods">
+                    <h4>Metodo de Pago</h4>
+                    <div class="payment-options">
+                        <div class="payment-option active" onclick="selectPayment(this)">&#128666; Contra Entrega</div>
+                    </div>
+                </div>
+
+                <button class="checkout-btn" onclick="processPayment()">
+                    Confirmar Pedido
+                </button>
+
+                <div class="secure-badge">
+                    &#128230; Paga cuando recibas tu pedido en casa
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Popular Backs</h4>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6; font-size: 0.9rem;">Tu tienda de ropa artesanal colombiana de confianza. Calidad y estilo en cada prenda.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="#mujeres">Mujeres</a></li>
+                    <li><a href="#hombres">Hombres</a></li>
+                    <li><a href="#mujeres">Zapatos</a></li>
+                    <li><a href="#mujeres">Pantalones</a></li>
+                    <li><a href="#hombres">Camisetas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Informacion</h4>
+                <ul>
+                    <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#" onclick="showPolicy('privacidad')">Politica de Privacidad</a></li>
+                    <li><a href="#" onclick="showPolicy('terminos')">Terminos y Condiciones</a></li>
+                    <li><a href="#" onclick="showPolicy('cookies')">Politica de Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>&#128205; Bogota, Colombia</li>
+                    <li>&#128222; +57 300 123 4567</li>
+                    <li>&#9993; info@popularbacks.com</li>
+                    <li>&#128338; Lun-Vie: 9am - 6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&#169; 2026 Popular Backs. Todos los derechos reservados. | Hecho con &#10084;&#65039; en Colombia</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal" onclick="closeCartOutside(event)">
+        <div class="cart-sidebar" onclick="event.stopPropagation()">
+            <div class="cart-header">
+                <h2>Tu Carrito</h2>
+                <button class="close-cart" onclick="toggleCart()" aria-label="Cerrar carrito">&#10005;</button>
+            </div>
+            <div id="cartModalItems"></div>
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid var(--pale-green);">
+                <div style="display: flex; justify-content: space-between; font-size: 1.1rem; font-weight: 700; color: var(--dark-green);">
+                    <span>Total:</span>
+                    <span id="modalTotal">$573.943</span>
+                </div>
+                <button class="checkout-btn" style="margin-top: 16px;" onclick="window.location.href='#carrito'; toggleCart();">
+                    Ver Carrito Completo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>Utilizamos cookies para mejorar tu experiencia y mostrar anuncios relevantes. <a href="#" onclick="showPolicy('cookies')">Mas informacion</a></p>
+        <button class="cookie-btn" onclick="acceptCookies()">Aceptar</button>
+    </div>
+
+    <script>
+        // ===== CART SYSTEM =====
+        let cart = [
+            {name: 'Zapatos Hombre', price: 219900, icon: 'images/zapatos_hombre.png'},
+            {name: 'Pantalones Mujer', price: 149900, icon: 'images/pantalones_mujer.png'},
+            {name: 'Camisetas Hombre', price: 99900, icon: 'images/camisetas_hombre.png'}
+        ];
+
+        function addToCart(name, price) {
+            cart.push({
+                name: name, 
+                price: price, 
+                icon: getIconForProduct(name)
+            });
+            updateCartCount();
+            updateCartTotals();
+            updateCartDisplay();
+            showToast(name + ' agregado al carrito!');
+        }
+
+        function getIconForProduct(name) {
+            if(name.includes('Zapatos')) return name.includes('Hombre') ? 'images/zapatos_hombre.png' : 'images/zapatos_mujer.png';
+            if(name.includes('Pantalones')) return name.includes('Hombre') ? 'images/pantalones_hombre.png' : 'images/pantalones_mujer.png';
+            if(name.includes('Ropa Interior')) return name.includes('Hombre') ? 'images/ropa_interior_hombre.png' : 'images/ropa_interior_mujer.png';
+            if(name.includes('Bermudas')) return name.includes('Hombre') ? 'images/bermudas_hombre.png' : 'images/bermudas_mujer.png';
+            if(name.includes('Camisas')) return name.includes('Hombre') ? 'images/camisas_hombre.png' : 'images/camisas_mujer.png';
+            if(name.includes('Camisetas')) return name.includes('Hombre') ? 'images/camisetas_hombre.png' : 'images/camisetas_mujer.png';
+            return 'images/camisetas_hombre.png';
+        }
+
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        function updateCartTotals() {
+            let subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            let tax = Math.round(subtotal * 0.19);
+            let total = subtotal + 15000 + tax;
+
+            document.getElementById('subtotal').textContent = '$' + subtotal.toLocaleString('es-CO');
+            document.getElementById('tax').textContent = '$' + tax.toLocaleString('es-CO');
+            document.getElementById('total').textContent = '$' + total.toLocaleString('es-CO');
+            document.getElementById('modalTotal').textContent = '$' + total.toLocaleString('es-CO');
+        }
+
+        function updateCartDisplay() {
+            let mainHtml = '';
+            cart.forEach((item, index) => {
+                mainHtml += `
+                    <div class="cart-item" data-id="${index}">
+                        <div class="cart-item-image"><img src="${item.icon}" alt="${item.name}"></div>
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <p>Cantidad: 1</p>
+                        </div>
+                        <div class="cart-item-price">$${item.price.toLocaleString('es-CO')}</div>
+                    </div>
+                `;
+            });
+            document.getElementById('cartItems').innerHTML = mainHtml;
+
+            let modalHtml = '';
+            cart.forEach((item, index) => {
+                modalHtml += `
+                    <div class="cart-item" style="margin-bottom: 12px;">
+                        <div class="cart-item-image" style="width: 56px; height: 56px;"><img src="${item.icon}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></div>
+                        <div class="cart-item-details">
+                            <h4 style="font-size: 0.95rem;">${item.name}</h4>
+                        </div>
+                        <div class="cart-item-price" style="font-size: 1rem;">$${item.price.toLocaleString('es-CO')}</div>
+                    </div>
+                `;
+            });
+            document.getElementById('cartModalItems').innerHTML = modalHtml;
+        }
+
+        // ===== UI FUNCTIONS =====
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        function toggleCart() {
+            document.getElementById('cartModal').classList.toggle('active');
+            updateCartDisplay();
+            document.body.style.overflow = document.getElementById('cartModal').classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeCartOutside(event) {
+            if(event.target === document.getElementById('cartModal')) {
+                toggleCart();
+            }
+        }
+
+        function selectPayment(element) {
+            document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function processPayment() {
+            showToast('Pedido confirmado. Recibiras tu producto y pagas al recibirlo.');
+        }
+
+        function showToast(message) {
+            let toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 80px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--dark-green);
+                color: white;
+                padding: 14px 28px;
+                border-radius: 12px;
+                font-size: 0.95rem;
+                z-index: 4000;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                animation: fadeInUp 0.3s ease;
+                max-width: 90%;
+                text-align: center;
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s';
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
+        }
+
+        function showPolicy(type) {
+            const policies = {
+                'privacidad': 'POLITICA DE PRIVACIDAD\n\nPopular Backs respeta tu privacidad. Los datos personales recolectados se utilizan unicamente para procesar tus pedidos y mejorar tu experiencia de compra. No compartimos tu informacion con terceros sin tu consentimiento.',
+                'terminos': 'TERMINOS Y CONDICIONES\n\nAl utilizar nuestros servicios, aceptas nuestros terminos de compra, envio y devolucion. Todos los productos tienen garantia de calidad. El tiempo de entrega estimado es de 3-5 dias habiles en Colombia.',
+                'cookies': 'POLITICA DE COOKIES\n\nUtilizamos cookies esenciales para el funcionamiento del sitio y cookies de preferencias para mejorar tu experiencia. Puedes gestionar tus preferencias en cualquier momento.'
+            };
+            alert(policies[type] || 'Politica no disponible');
+        }
+
+        // ===== COOKIE BANNER =====
+        function acceptCookies() {
+            document.getElementById('cookieBanner').classList.remove('show');
+            try {
+                localStorage.setItem('cookiesAccepted', 'true');
+            } catch(e) {
+                document.cookie = 'cookiesAccepted=true;path=/;max-age=31536000';
+            }
+        }
+
+        setTimeout(() => {
+            let accepted = false;
+            try {
+                accepted = localStorage.getItem('cookiesAccepted') === 'true';
+            } catch(e) {
+                accepted = document.cookie.includes('cookiesAccepted=true');
+            }
+            if(!accepted) {
+                document.getElementById('cookieBanner').classList.add('show');
+            }
+        }, 2000);
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({behavior: 'smooth', block: 'start'});
+                    document.getElementById('navMenu').classList.remove('active');
+                }
+            });
+        });
+
+        // ===== KEYBOARD SUPPORT =====
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('keypress', function(e) {
+                if(e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // ===== INIT =====
+        updateCartCount();
+        updateCartTotals();
+        updateCartDisplay();
+    </script>
+</body>
+</html>
